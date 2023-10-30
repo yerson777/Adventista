@@ -22,12 +22,16 @@ class DepartamentoController extends Controller
     public function editarDepartamento(Request $request, $id)
     {
         $departamento = Departamento::find($id);
-        $departamento->Nombre_Departamento = $request->input('Nombre_Departamento');
-        $departamento->save();
-
-        return compact('departamento');
+        
+        if ($departamento) {
+            $departamento->Nombre_Departamento = $request->input('Nombre_Departamento');
+            $departamento->save();
+            
+            return back()->with('success', 'Departamento actualizado correctamente');
+        } else {
+            return back()->with('error', 'Departamento no encontrado');
+        }
     }
-
     public function eliminarDepartamento($id)
     {
         $departamento = Departamento::find($id);

@@ -7,7 +7,7 @@
 <h1 style="color: #104F80; text-shadow: 2px 2px 4px #104F80; font-family: 'Arial', sans-serif; background: linear-gradient(to right, #343A40, #343A40); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center;">Lista de Gastos.</h1>
     <div class="card-body" style="background-color: #343a40; display: flex; justify-content: space-between; align-items: center; padding: 10px;">
         <div>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#crearGastoModal">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#crearGastoModal">
                 Crear Gasto
             </button>
         </div>
@@ -38,11 +38,11 @@
                 <td>{{ $gasto->Descripcion }}</td>
                 <td>{{ $gasto->Monto_del_Gasto}}</td>
                 <td>
-                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editarGastoModal{{ $gasto->id }}">
-                        Editar
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#editarGastoModal{{ $gasto->id }}">
+                        <i class="fas fa-edit"></i>
                     </button>
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#eliminarGastoModal{{ $gasto->id }}">
-                        Eliminar
+                        <i class="fas fa-trash-alt"></i>
                     </button>
                 </td>
             </tr>
